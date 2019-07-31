@@ -49,7 +49,7 @@ def test_token(current_user: DBUser = Depends(get_current_user)):
     """
     Test access token
     """
-    return current_user
+    return current_user.__dict__
 
 
 @router.post("/reset-password/", tags=["login"], response_model=Msg)
