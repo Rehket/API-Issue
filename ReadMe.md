@@ -1,6 +1,7 @@
-# FastAPI Repo to identify an issue.
+# FastAPI Repo to identify an issue.(Now Fixed)
 
 - This repo to demonstrate a bug I am experiencing with trying to run a fastapi application. 
+- The fix is to convert response from a SQLAlchemy model instance to a dict or a pydantic model instance. 
 
 ## Issue Details
 ### Environment
