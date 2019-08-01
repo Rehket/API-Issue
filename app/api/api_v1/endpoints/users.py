@@ -26,7 +26,7 @@ def read_users(
     Retrieve users.
     """
     users = crud.user.get_multi(db, skip=skip, limit=limit)
-    return (u.__dict__ for u in users)
+    return users
 
 
 @router.post("/", response_model=User)
@@ -47,7 +47,7 @@ def create_user(
         )
     user = crud.user.create(db, user_in=user_in)
 
-    return user.__dict__
+    return user
 
 
 @router.put("/me", response_model=User)
@@ -71,7 +71,7 @@ def update_user_me(
     if email is not None:
         user_in.email = email
     user = crud.user.update(db, user=current_user, user_in=user_in)
-    return user.__dict__
+    return user
 
 
 @router.get("/me", response_model=User)
@@ -82,7 +82,7 @@ def read_user_me(
     """
     Get current user.
     """
-    return current_user.__dict__
+    return current_user
 
 
 @router.post("/open", response_model=User)
@@ -109,7 +109,7 @@ def create_user_open(
         )
     user_in = UserCreate(password=password, email=email, full_name=full_name)
     user = crud.user.create(db, user_in=user_in)
-    return user.__dict__
+    return user
 
 
 @router.get("/{user_id}", response_model=User)
@@ -130,7 +130,7 @@ def read_user_by_id(
         raise HTTPException(
             status_code=400, detail="The user doesn't have enough privileges"
         )
-    return user.__dict__
+    return user
 
 
 @router.put("/{user_id}", response_model=User)
@@ -151,4 +151,4 @@ def update_user(
             detail="The user with this username does not exist in the system",
         )
     user = crud.user.update(db, user=user, user_in=user_in)
-    return user.__dict__
+    return user
