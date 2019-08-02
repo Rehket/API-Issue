@@ -1,4 +1,4 @@
-# FastAPI Repo Template 
+# FastAPI Template Repo
 ## Based on the backend in [@tiangolo's](https://github.com/tiangolo) [full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql)
 
 ### Setup
