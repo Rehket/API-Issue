@@ -17,7 +17,7 @@
     Lastly...
     - run ```uvicorn app.main:app --reload``` to start the application 
 
-###Usage
+### Usage
 - Once the application is running, by 
 going to ```localhost:8000/docs``` or what you configured in the env.ps1, you will be able to login and tryout the endpoints. 
 
